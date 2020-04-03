@@ -1,3 +1,5 @@
+"""Import required libraries"""
+
 import math
 import pysam
 import warnings
@@ -77,10 +79,12 @@ plt.show()
 
 def run_chi2(v):
     case_counts = Counter([sum(v.samples[s]['GT']) for s in cases])
-    case_refs, case_alts = case_counts[0], case_counts[2]
+    case_refs = 2 * case_counts[0] + case_counts[1]
+    case_alts = 2 * case_counts[2] + case_counts[1]
 
     control_counts = Counter([sum(v.samples[s]['GT']) for s in controls])
-    control_refs, control_alts = control_counts[0], control_counts[2]
+    control_refs = 2 * control_counts[0] + control_counts[1]
+    control_alts = 2 * control_counts[2] + control_counts[1]
 
     total = case_refs + case_alts + control_refs + control_alts
 
@@ -118,7 +122,7 @@ def show_manhattan(bonferroni = False):
 
         plt.subplot2grid((1, sum(widths)), (0, sum(widths[:i])), colspan=widths[i])
         plt.scatter(pos, p)
-        plt.ylim(0, 13)
+        plt.ylim(0, 15)
         plt.axhline(-np.log10(0.01 / len_variants if bonferroni else 0.01), c='r')
 
     plt.show()
