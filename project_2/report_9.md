@@ -2,7 +2,7 @@
 
     **> Paired end 1: Per base sequence content je kriterijum koji je označen kao problematičan i on označava propociju svake baze svih readova. U najboljem slučaju, procenat svih baza bi trebao da bude 25%, ali ovde se taj odnos menja od pozicije 90.**
     
-    **> Paired end 2: Per base sequence quality je kriterijum koji je označen kao problematičan i on označava kvalitet baza na svim pozicijama svih readova. To je zato što bazni parovi od pozicije 160 imaju veću devijaciju po pitanju kvaliteta.**
+    **> Paired end 2: Per base sequence quality je kriterijum koji je označen kao problematičan i on označava kvalitet baza na svim pozicijama svih readova. To je zato što bazni parovi od pozicije 160 imaju veću devijaciju kvaliteta.**
 
 2. Mapirati sekvencirane readove na referentni genom hg38 upotrebom alata BWA.
     
@@ -74,6 +74,6 @@
     
     **> Benign likely benign association: 1**
     
-6. Svi uzorici sadrže određenu količinu kontaminacije DNK materijalom bakterijskog ili virusnog porekla. Većina ovakvih readova se neće mapirati na ljudski genom. Izvući readove koji nisu mapirani u procesu mapiranja, asemblovati ih alatom abyss, i identifikovati organizam od kojeg potiče najduži skafold upotrebom alata Blast.
+6. Svi uzorici sadrže određenu količinu kontaminacije DNK materijalom bakterijskog ili virusnog porekla. Većina ovakvih readova se neće mapirati na ljudski genom. Izvući readove koji nisu mapirani u procesu mapiranja, asemblovati ih alatom abyss, i identifikovati organizam od kojeg potiče najduži skafold upotrebom alata [BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?PROGRAM=blastn&PAGE_TYPE=BlastSearch).
 
     **> Nemapirana sekvenca potiče od bakterije [Bradyrhizobium Japonicum](https://en.wikipedia.org/wiki/Bradyrhizobium_japonicum)**
